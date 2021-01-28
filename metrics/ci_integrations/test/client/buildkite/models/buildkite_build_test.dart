@@ -9,6 +9,7 @@ void main() {
     const number = 1;
     const blocked = false;
     const state = BuildkiteBuildStateMapper.passed;
+    const url = 'api-url';
     const webUrl = 'url';
     final startedAt = DateTime(2020).toUtc();
     final finishedAt = DateTime(2020, 2).toUtc();
@@ -17,6 +18,7 @@ void main() {
       'id': id,
       'number': number,
       'blocked' : blocked,
+      'url': url,
       'web_url': webUrl,
       'state': state,
       'started_at': startedAt?.toIso8601String(),
@@ -28,6 +30,7 @@ void main() {
       number: number,
       blocked: blocked,
       state: BuildkiteBuildState.passed,
+      url: url,
       webUrl: webUrl,
       startedAt: startedAt,
       finishedAt: finishedAt,
@@ -41,6 +44,7 @@ void main() {
         number: number,
         blocked: blocked,
         state: state,
+        url: url,
         webUrl: webUrl,
         startedAt: startedAt,
         finishedAt: finishedAt,
@@ -50,6 +54,7 @@ void main() {
       expect(build.number, equals(number));
       expect(build.blocked, equals(blocked));
       expect(build.state, equals(state));
+      expect(build.url, equals(url));
       expect(build.webUrl, equals(webUrl));
       expect(build.startedAt, equals(startedAt));
       expect(build.finishedAt, equals(finishedAt));
@@ -84,6 +89,7 @@ void main() {
         'id': "2",
         'number': 2,
         'blocked' : blocked,
+        'url': 'api-url',
         'web_url': 'url',
         'state': BuildkiteBuildStateMapper.failed,
         'started_at': DateTime(2020, 3).toIso8601String(),

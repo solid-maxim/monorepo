@@ -14,6 +14,9 @@ class BuildkiteTestDataGenerator {
   /// A [Percent] coverage to use in this test data generator.
   final Percent coverage;
 
+  // An API url to use in this test data generator.
+  final String url;
+
   /// A url to use in this test data generator.
   final String webUrl;
 
@@ -30,6 +33,7 @@ class BuildkiteTestDataGenerator {
   const BuildkiteTestDataGenerator({
     this.pipelineSlug,
     this.coverage,
+    this.url,
     this.webUrl,
     this.startedAt,
     this.finishedAt,
@@ -53,6 +57,7 @@ class BuildkiteTestDataGenerator {
       id: id,
       number: number,
       blocked: blocked,
+      url: url,
       webUrl: webUrl,
       state: state,
       startedAt: startedAt,
@@ -104,6 +109,7 @@ class BuildkiteTestDataGenerator {
       buildStatus: buildStatus,
       duration: duration,
       workflowName: pipelineSlug,
+      apiUrl: url,
       url: webUrl,
       coverage: coverage,
     );
