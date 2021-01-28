@@ -61,6 +61,7 @@ class BuildkiteSourceClientAdapter with LoggerMixin implements SourceClient {
 
   @override
   Future<Percent> fetchCoverage(BuildData build) async {
+    ArgumentError.checkNotNull(build, 'build');
     logger.info(
       'Fetching coverage artifact for a build #${build.buildNumber}...',
     );

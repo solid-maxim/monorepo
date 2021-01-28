@@ -723,6 +723,15 @@ void main() {
       },
     );
 
+    test(
+      ".fetchCoverage() throws an ArgumentError if the build is null",
+      () {
+        final result = adapter.fetchCoverage(null);
+
+        expect(result, throwsArgumentError);
+      },
+    );
+
     test(".fetchCoverage() fetches coverage for the given build", () async {
       whenFetchCoverage().thenSuccessWith(defaultArtifactsPage);
 
