@@ -21,7 +21,7 @@ import 'package:universal_html/html.dart';
 Future<void> main() async {
   PlatformConfiguration.configureApp();
   Favicon().setup();
-  ///
+  //
   LoggerWriter writer;
 
   final configFactory = MetricsConfigFactory();
