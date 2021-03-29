@@ -1,6 +1,7 @@
-// Use of this source code is governed by the Apache License, Version 2.0 
+// Use of this source code is governed by the Apache License, Version 2.0
 // that can be found in the LICENSE file.
 
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter_test/flutter_test.dart';
 import 'package:integration_test/integration_test.dart';
 import 'package:metrics/auth/presentation/strings/auth_strings.dart';
@@ -36,6 +37,12 @@ import 'test_utils/pump_and_settle_widget.dart';
 
 void main() {
   IntegrationTestWidgetsFlutterBinding.ensureInitialized();
+
+  Firestore.instance.settings(
+    host: 'localhost:8080',
+    sslEnabled: false,
+    persistenceEnabled: false,
+  );
 
   final configFactory = MetricsConfigFactory();
   final metricsConfig = configFactory.create();
